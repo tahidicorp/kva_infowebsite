@@ -12,7 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="max-w-6xl mx-auto p-6">{children}</main>
+        <main>{children}</main>
       </body>
     </html>
   );
