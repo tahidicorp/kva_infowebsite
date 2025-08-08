@@ -49,7 +49,7 @@ export default function Navbar() {
 
         {/* Contact button (desktop) */}
         <a
-          href="#contact"
+          href="/contacts"
           className="hidden md:inline-block bg-green-700 text-white px-5 py-2 rounded-full font-semibold hover:bg-green-800 transition"
         >
           Contact
@@ -79,7 +79,7 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href="#contact"
+            href="/contacts"
             className="block bg-green-700 text-white px-5 py-2 rounded-full font-semibold hover:bg-green-800 transition"
             onClick={() => setMenuOpen(false)}
           >

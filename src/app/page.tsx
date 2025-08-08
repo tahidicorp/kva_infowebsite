@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import AboutUs from "./components/AboutUs";
+import MizanTeam from "./components/mizanTeam";
 
 const screens = [
   {
@@ -52,57 +54,69 @@ export default function HomePage() {
   const { title, description, image, route } = screens[currentIndex];
 
   return (
-    <div
-      className="w-screen h-screen bg-cover bg-center transition-all duration-1000 relative flex items-center justify-start"
-      style={{ backgroundImage: `url(${image})` }}
-    >
-      {/* Darker overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50 z-10" />
+    <>
+      {/* Hero Section */}
+      <div className="relative w-full h-screen overflow-hidden">
+        {/* Background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-1000"
+          style={{ backgroundImage: `url(${image})` }}
+        />
 
-      {/* Content */}
-      <div className="z-20 max-w-4xl px-10 text-white">
-        <h1 className="text-5xl md:text-6xl font-bold mb-8 drop-shadow-lg text-green-600">{title}</h1>
-        <p className="text-xl md:text-2xl font-light max-w-xl drop-shadow-md">
-          {description}
-        </p>
-        <button
-          onClick={() => router.push(route)}
-          className="mt-8 px-6 py-3 bg-green-600 hover:bg-green-700 transition rounded-lg font-semibold shadow-lg"
-        >
-          Explore
-        </button>
-      </div>
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50 z-10" />
 
-      {/* Scroll Navigation Buttons */}
-      <div className="absolute bottom-6 right-6 flex gap-4 z-20">
-        <button
-          onClick={() =>
-            setCurrentIndex((prev) => (prev - 1 + screens.length) % screens.length)
-          }
-          className="w-10 h-10 rounded-full bg-white/20 text-white border border-white/40 hover:bg-white/30"
-        >
-          ←
-        </button>
-        <button
-          onClick={() => setCurrentIndex((prev) => (prev + 1) % screens.length)}
-          className="w-10 h-10 rounded-full bg-white/20 text-white border border-white/40 hover:bg-white/30"
-        >
-          →
-        </button>
-      </div>
-
-      {/* Scrolls Indicators */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-        {screens.map((_, index) => (
+        {/* Content */}
+        <div className="relative z-20 flex flex-col justify-center h-full px-6 sm:px-10 text-white max-w-4xl">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-green-600 drop-shadow-lg">
+            {title}
+          </h1>
+          <p className="text-base sm:text-lg md:text-2xl font-light drop-shadow-md max-w-xl">
+            {description}
+          </p>
           <button
-            key={index}
-            onClick={() => handleScrollTo(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentIndex ? "bg-white" : "bg-white/40"
-            }`}
-          />
-        ))}
+            onClick={() => router.push(route)}
+            className="mt-6 sm:mt-8 px-5 py-3 bg-green-600 hover:bg-green-700 transition rounded-lg font-semibold shadow-lg w-max"
+          >
+            Explore
+          </button>
+        </div>
+
+        {/* Arrows */}
+        <div className="absolute bottom-6 right-6 flex gap-4 z-20">
+          <button
+            onClick={() =>
+              setCurrentIndex((prev) => (prev - 1 + screens.length) % screens.length)
+            }
+            className="w-10 h-10 rounded-full bg-white/20 text-white border border-white/40 hover:bg-white/30"
+          >
+            ←
+          </button>
+          <button
+            onClick={() => setCurrentIndex((prev) => (prev + 1) % screens.length)}
+            className="w-10 h-10 rounded-full bg-white/20 text-white border border-white/40 hover:bg-white/30"
+          >
+            →
+          </button>
+        </div>
+
+        {/* Dots */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+          {screens.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => handleScrollTo(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentIndex ? "bg-white" : "bg-white/40"
+              }`}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+
+      {/* Other Sections */}
+      <AboutUs />
+      <MizanTeam />
+    </>
   );
 }
