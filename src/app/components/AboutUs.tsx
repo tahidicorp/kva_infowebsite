@@ -26,8 +26,8 @@ export default function AboutUs() {
           {/* Testimonial 1 */}
           <div className="bg-white rounded-xl shadow-sm p-5 sm:p-6 md:p-8 transition-all">
             <p className="italic text-sm sm:text-base text-gray-700 mb-4 leading-relaxed">
-              "Thanks to Mizan's real estate team, I finally found the perfect home at a price I could afford.
-              Their support through the process made buying stress-free and transparent!"
+              &quot;Thanks to Mizan&apos;s real estate team, I finally found the perfect home at a price I could afford.
+              Their support through the process made buying stress-free and transparent!&quot;
             </p>
             <div>
               <p className="text-green-700 font-bold">Amina K.</p>
@@ -38,8 +38,8 @@ export default function AboutUs() {
           {/* Testimonial 2 */}
           <div className="bg-white rounded-xl shadow-sm p-5 sm:p-6 md:p-8 transition-all">
             <p className="italic text-sm sm:text-base text-gray-700 mb-4 leading-relaxed">
-              "KVA Ride has changed the way I move around. It's fast, reliable, and super easy to use.
-              I book my rides in seconds, and the drivers are always professional."
+              &quot;KVA Ride has changed the way I move around. It&apos;s fast, reliable, and super easy to use.
+              I book my rides in seconds, and the drivers are always professional.&quot;
             </p>
             <div>
               <p className="text-green-700 font-bold">James W.</p>

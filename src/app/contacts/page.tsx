@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import emailjs from '@emailjs/browser';
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function ContactPage() {
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [status, setStatus] = useState('');
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState("");
 
   const handleSend = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -18,18 +18,18 @@ export default function ContactPage() {
 
     try {
       const result = await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
         templateParams,
-        'YOUR_PUBLIC_KEY'
+        "YOUR_PUBLIC_KEY"
       );
       console.log(result.text);
-      setStatus('✅ Message sent successfully!');
-      setEmail('');
-      setMessage('');
+      setStatus("✅ Message sent successfully!");
+      setEmail("");
+      setMessage("");
     } catch (error) {
       console.error(error);
-      setStatus('❌ Failed to send message.');
+      setStatus("❌ Failed to send message.");
     }
   };
 
@@ -38,7 +38,7 @@ export default function ContactPage() {
       <div className="max-w-xl mx-auto">
         <h1 className="text-4xl font-bold text-green-700 mb-6 text-center">Contact Us</h1>
         <p className="text-center text-gray-600 mb-10">
-          Have a question or message? We'd love to hear from you.
+          Have a question or message? We&apos;d love to hear from you.
         </p>
 
         <form onSubmit={handleSend} className="space-y-6">

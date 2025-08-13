@@ -9,7 +9,7 @@ export default function MizanTeam() {
       <div className="max-w-6xl mx-auto text-center mb-16">
         <h2 className="text-4xl font-bold text-green-700 mb-4">Team</h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          The visionaries and innovators powering Mizan Investments' impact across real estate,
+          The visionaries and innovators powering Mizan Investments&apos; impact across real estate,
           transportation, and technology.
         </p>
       </div>
@@ -36,10 +36,10 @@ export default function MizanTeam() {
                 <Mail size={16} /> mizaninvestments@gmail.com
               </a>
               <div className="mt-2 flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                <a href="#" className="hover:text-green-700">
+                <a href="#" className="hover:text-green-700" aria-label="LinkedIn">
                   <Linkedin size={20} />
                 </a>
-                <a href="#" className="hover:text-green-700">
+                <a href="#" className="hover:text-green-700" aria-label="Twitter / X">
                   <Twitter size={20} />
                 </a>
               </div>
@@ -68,10 +68,10 @@ export default function MizanTeam() {
                 <Mail size={16} /> tahidicorp@gmail.com
               </a>
               <div className="mt-2 flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                <a href="#" className="hover:text-green-700">
+                <a href="#" className="hover:text-green-700" aria-label="LinkedIn">
                   <Linkedin size={20} />
                 </a>
-                <a href="#" className="hover:text-green-700">
+                <a href="#" className="hover:text-green-700" aria-label="Twitter / X">
                   <Twitter size={20} />
                 </a>
               </div>
