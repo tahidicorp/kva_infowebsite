@@ -31,12 +31,11 @@ export default function AboutUs() {
           className="text-base sm:text-lg md:text-xl max-w-4xl mx-auto leading-relaxed relative z-10"
         >
           At <span className="font-semibold">Mizan Investments</span>, we are more than a business —
-          we are a mission-driven team committed to empowering communities through innovative solutions in
-          <span className="font-semibold text-green-700"> Financing</span>,
-          <span className="font-semibold text-green-700"> Construction</span>, and
-          <span className="font-semibold text-green-700"> Real Estate</span>.
-          Our passion lies in creating opportunities, delivering excellence, and building a future where
-          growth is accessible to all.
+          we are a mission-driven team committed to empowering communities through innovative solutions in{" "}
+          <span className="font-semibold text-green-700">Financing</span>,{" "}
+          <span className="font-semibold text-green-700">Construction</span>, and{" "}
+          <span className="font-semibold text-green-700">Real Estate</span>. Our passion lies in creating
+          opportunities, delivering excellence, and building a future where growth is accessible to all.
         </motion.p>
       </section>
 
@@ -88,8 +87,8 @@ export default function AboutUs() {
           {/* Testimonial 1 */}
           <div className="bg-white rounded-xl shadow-sm p-5 sm:p-6 md:p-8 transition-all">
             <p className="italic text-sm sm:text-base text-gray-700 mb-4 leading-relaxed">
-              &quot;Thanks to Mizan&apos;s real estate team, I finally found the perfect home at a price I could afford.
-              Their support through the process made buying stress-free and transparent!&quot;
+              "Thanks to Mizan's real estate team, I finally found the perfect home at a price I could afford.
+              Their support through the process made buying stress-free and transparent!"
             </p>
             <div>
               <p className="text-green-700 font-bold">Amina K.</p>
@@ -100,12 +99,12 @@ export default function AboutUs() {
           {/* Testimonial 2 */}
           <div className="bg-white rounded-xl shadow-sm p-5 sm:p-6 md:p-8 transition-all">
             <p className="italic text-sm sm:text-base text-gray-700 mb-4 leading-relaxed">
-              &quot;KVA Ride has changed the way I move around. It&apos;s fast, reliable, and super easy to use.
-              I book my rides in seconds, and the drivers are always professional.&quot;
+              "Their financing solutions made starting my business possible. The process was simple,
+              professional, and tailored exactly to my needs."
             </p>
             <div>
               <p className="text-green-700 font-bold">James W.</p>
-              <p className="text-sm text-gray-500">Commuter, California</p>
+              <p className="text-sm text-gray-500">Entrepreneur, California</p>
             </div>
           </div>
         </div>
