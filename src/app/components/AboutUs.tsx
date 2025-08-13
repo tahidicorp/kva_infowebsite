@@ -34,8 +34,9 @@ export default function AboutUs() {
           we are a mission-driven team committed to empowering communities through innovative solutions in{" "}
           <span className="font-semibold text-green-700">Financing</span>,{" "}
           <span className="font-semibold text-green-700">Construction</span>, and{" "}
-          <span className="font-semibold text-green-700">Real Estate</span>. Our passion lies in creating
-          opportunities, delivering excellence, and building a future where growth is accessible to all.
+          <span className="font-semibold text-green-700">Real Estate</span>.
+          Our passion lies in creating opportunities, delivering excellence, and building a future where
+          growth is accessible to all.
         </motion.p>
       </section>
 
@@ -99,12 +100,12 @@ export default function AboutUs() {
           {/* Testimonial 2 */}
           <div className="bg-white rounded-xl shadow-sm p-5 sm:p-6 md:p-8 transition-all">
             <p className="italic text-sm sm:text-base text-gray-700 mb-4 leading-relaxed">
-              "Their financing solutions made starting my business possible. The process was simple,
-              professional, and tailored exactly to my needs."
+              "KVA Ride has changed the way I move around. It's fast, reliable, and super easy to use.
+              I book my rides in seconds, and the drivers are always professional."
             </p>
             <div>
               <p className="text-green-700 font-bold">James W.</p>
-              <p className="text-sm text-gray-500">Entrepreneur, California</p>
+              <p className="text-sm text-gray-500">Commuter, California</p>
             </div>
           </div>
         </div>
