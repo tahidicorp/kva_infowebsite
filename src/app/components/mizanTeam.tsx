@@ -1,86 +1,123 @@
 "use client";
 
-import { Mail, Linkedin, Twitter } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import {
+  Mail,
+  Phone,
+  Linkedin,
+  Twitter,
+  Instagram,
+  Youtube,
+} from "lucide-react";
 
-export default function MizanTeam() {
+export default function Footer() {
   return (
-    <section className="bg-gray-50 py-20 px-6 text-gray-800">
-      <div 
-        className="max-w-4xl mx-auto text-center mb-16 animate-fadeInUp"
-      >
-        <h2 className="text-4xl font-bold text-green-700 mb-4">Our Leadership</h2>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          The visionaries and innovators powering Mizan Investments&apos; impact across real estate,
-          transportation, and technology.
-        </p>
-      </div>
+    <footer
+      id="footer"
+      className="relative text-white pt-16 px-6 bg-cover bg-center overflow-hidden"
+      style={{
+        backgroundImage: "url('/invest.jpg')",
+      }}
+    >
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/80 to-black/95 z-0" />
 
-      <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-        {/* CEO Card */}
-        <div className="bg-white shadow-xl rounded-2xl p-8 text-left hover:shadow-2xl transition duration-300 group">
-          <div className="flex items-center gap-6">
-            <div className="w-28 h-28 relative">
-              <Image
-                src="/logomizan.png"
-                alt="CEO - Luqman Cooper"
-                fill
-                className="rounded-full object-cover border-4 border-green-700"
-              />
-            </div>
-            <div>
-              <h3 className="text-2xl font-semibold text-green-700">Luqman Cooper</h3>
-              <p className="text-sm text-gray-500 mb-1">Chief Executive Officer</p>
-              <a
-                href="mailto:mizaninvestments@gmail.com"
-                className="flex items-center gap-2 text-sm text-gray-600 hover:text-green-700"
-              >
-                <Mail size={16} /> mizaninvestments@gmail.com
-              </a>
-              <div className="mt-2 flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                <a href="#" className="hover:text-green-700" aria-label="LinkedIn">
-                  <Linkedin size={20} />
-                </a>
-                <a href="#" className="hover:text-green-700" aria-label="Twitter / X">
-                  <Twitter size={20} />
-                </a>
-              </div>
-            </div>
-          </div>
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto grid md:grid-cols-3 gap-12 animate-fade-up">
+        
+        {/* Logo & About */}
+        <div className="space-y-4">
+          <Image
+            src="/logo.png"
+            alt="Mizan Logo"
+            width={100}
+            height={100}
+            className="mb-2 rounded-lg shadow-lg"
+          />
+          <p className="text-sm text-gray-300 leading-relaxed">
+            Empowering growth across real estate, finance, and construction —
+            driven by innovation and excellence.
+          </p>
         </div>
 
-        {/* Tech Team Card */}
-        <div className="bg-white shadow-xl rounded-2xl p-8 text-left hover:shadow-2xl transition duration-300 group">
-          <div className="flex items-center gap-6">
-            <div className="w-28 h-28 relative">
-              <Image
-                src="/tahidi2.jpg"
-                alt="Tahidi Corp"
-                fill
-                className="rounded-full object-cover border-4 border-green-700"
-              />
-            </div>
-            <div>
-              <h3 className="text-2xl font-semibold text-green-700">Tahidi Corp</h3>
-              <p className="text-sm text-gray-500 mb-1">Technology Partner</p>
+        {/* Services */}
+        <div>
+          <h3 className="text-xl font-semibold mb-4 border-b border-green-500 pb-2">
+            Services
+          </h3>
+          <ul className="space-y-2 text-gray-300">
+            {[
+              { name: "Finance", href: "/financing" },
+              { name: "Construction", href: "/construction" },
+              { name: "Real Estate", href: "/real-estate" },
+              { name: "KVA Ride", href: "/kva-ride" },
+            ].map((item) => (
+              <li key={item.name}>
+                <Link
+                  href={item.href}
+                  className="relative inline-block hover:text-green-400 transition-colors after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-green-400 after:transition-all hover:after:w-full"
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Contact */}
+        <div>
+          <h3 className="text-xl font-semibold mb-4 border-b border-green-500 pb-2">
+            Contact
+          </h3>
+          <div className="text-gray-300 space-y-2">
+            <p className="flex items-center gap-2 hover:text-green-400 transition">
+              <Mail size={16} /> mizaninvestments@gmail.com
+            </p>
+            <p className="flex items-center gap-2 hover:text-green-400 transition">
+              <Phone size={16} /> +1 773 746 3519
+            </p>
+          </div>
+          <div className="mt-4 flex gap-4">
+            {[
+              { Icon: Linkedin, href: "#" },
+              { Icon: Twitter, href: "#" },
+              { Icon: Instagram, href: "#" },
+              { Icon: Youtube, href: "#" },
+            ].map(({ Icon, href }, idx) => (
               <a
-                href="mailto:tahidicorp@gmail.com"
-                className="flex items-center gap-2 text-sm text-gray-600 hover:text-green-700"
+                key={idx}
+                href={href}
+                className="p-2 rounded-full bg-white/10 hover:bg-green-500 transition duration-300 transform hover:scale-110"
               >
-                <Mail size={16} /> tahidicorp@gmail.com
+                <Icon size={20} />
               </a>
-              <div className="mt-2 flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                <a href="#" className="hover:text-green-700" aria-label="LinkedIn">
-                  <Linkedin size={20} />
-                </a>
-                <a href="#" className="hover:text-green-700" aria-label="Twitter / X">
-                  <Twitter size={20} />
-                </a>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
-    </section>
+
+      {/* Bottom Bar */}
+      <div className="relative z-10 mt-12 border-t border-white/20 pt-6 text-center text-gray-400 text-sm">
+        &copy; {new Date().getFullYear()} Mizan Investments. All rights reserved.
+      </div>
+
+      {/* Animations */}
+      <style jsx>{`
+        @keyframes fade-up {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-up {
+          animation: fade-up 0.8s ease-out forwards;
+        }
+      `}</style>
+    </footer>
   );
 }
