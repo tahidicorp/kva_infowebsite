@@ -84,7 +84,6 @@ export default function AboutUs() {
           What Our Clients Say
         </motion.h2>
 
-<<<<<<< HEAD
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {/* Testimonial 1 */}
           <div className="bg-white rounded-xl shadow-sm p-5 sm:p-6 md:p-8 transition-all">
@@ -109,37 +108,6 @@ export default function AboutUs() {
               <p className="text-sm text-gray-500">Commuter, California</p>
             </div>
           </div>
-=======
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          {[
-            {
-              text: "Mizan Investments transformed my dream of owning a home into reality. Their professionalism and dedication made the process smooth and stress-free.",
-              name: "Amina K.",
-              role: "Homeowner, Texas",
-            },
-            {
-              text: "Their construction team delivered beyond expectations — on time, on budget, and with incredible attention to detail.",
-              name: "David M.",
-              role: "Business Owner, Florida",
-            },
-          ].map((t, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: i * 0.2 }}
-              className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition duration-300"
-            >
-              <p className="italic text-gray-700 mb-4 leading-relaxed">
-                &ldquo;{t.text}&rdquo;
-              </p>
-              <div>
-                <p className="text-green-700 font-bold">{t.name}</p>
-                <p className="text-sm text-gray-500">{t.role}</p>
-              </div>
-            </motion.div>
-          ))}
->>>>>>> 7f30101 (made changes)
         </div>
       </section>
     </div>

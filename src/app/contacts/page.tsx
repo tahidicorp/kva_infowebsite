@@ -4,15 +4,9 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
 export default function ContactPage() {
-<<<<<<< HEAD
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState("");
-=======
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [status, setStatus] = useState('');
->>>>>>> 7f30101 (made changes)
 
   const handleSend = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,15 +24,9 @@ export default function ContactPage() {
         "YOUR_PUBLIC_KEY"
       );
       console.log(result.text);
-<<<<<<< HEAD
       setStatus("✅ Message sent successfully!");
       setEmail("");
       setMessage("");
-=======
-      setStatus('✅ Message sent successfully!');
-      setEmail('');
-      setMessage('');
->>>>>>> 7f30101 (made changes)
     } catch (error) {
       console.error(error);
       setStatus("❌ Failed to send message.");
