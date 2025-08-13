@@ -6,8 +6,8 @@ import Footer from "./components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "KVA | Ride Smarter in the USA",
-  description: "Book rides instantly across the USA with KVA, your reliable online ride-hailing platform.",
+  title: "Mizan Investments",
+  description: "Mizan Investments we are more than a business — we are a  mission-driven team committed to empowering communities through innovative solutions",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
