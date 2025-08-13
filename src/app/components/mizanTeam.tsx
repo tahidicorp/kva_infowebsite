@@ -6,8 +6,10 @@ import Image from "next/image";
 export default function MizanTeam() {
   return (
     <section className="bg-gray-50 py-20 px-6 text-gray-800">
-      <div className="max-w-6xl mx-auto text-center mb-16">
-        <h2 className="text-4xl font-bold text-green-700 mb-4">Team</h2>
+      <div 
+        className="max-w-4xl mx-auto text-center mb-16 animate-fadeInUp"
+      >
+        <h2 className="text-4xl font-bold text-green-700 mb-4">Our Leadership</h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
           The visionaries and innovators powering Mizan Investments&apos; impact across real estate,
           transportation, and technology.

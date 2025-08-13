@@ -16,10 +16,11 @@ export default function Navbar() {
       : 'hover:text-green-700';
 
   const navLinks = [
+     { name: 'Home', href: '/' }, 
     { name: 'Real Estate', href: '/real-estate' },
     { name: 'Construction', href: '/construction' },
     { name: 'Financing', href: '/financing' },
-    { name: 'KVA_Drive', href: '/kva-drive' },
+
   ];
 
   return (

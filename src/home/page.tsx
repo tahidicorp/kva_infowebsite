@@ -1,0 +1,111 @@
+"use client";
+
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import AboutUs from "@/app/components/AboutUs";
+import MizanTeam from "@/app/components/mizanTeam";
+
+const screens = [
+  {
+    title: "Finance",
+    description:
+      "Smart financial tools to help you manage loans, microcredit, and investments — all with real-time analytics.",
+    image: "/invest.jpg",
+    route: "/financing",
+  },
+  {
+    title: "Construction",
+    description:
+      "From residential to commercial, we offer modern, affordable construction services that fit your needs.",
+    image: "/construction.jpg",
+    route: "/construction",
+  },
+  {
+    title: "Real Estate",
+    description:
+      "Explore and invest in real estate with confidence. Browse listings, book viewings, and grow your portfolio.",
+    image: "/real_estate.jpg",
+    route: "/real-estate",
+  },
+];
+
+export default function HomePage() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const router = useRouter();
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % screens.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const { title, description, image, route } = screens[currentIndex];
+
+  return (
+    <>
+      {/* Hero Section */}
+      <div className="relative w-full h-[85vh] overflow-hidden">
+        {/* Background */}
+        <AnimatePresence>
+          <motion.div
+            key={image}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${image})` }}
+          />
+        </AnimatePresence>
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40 z-10" />
+
+        {/* Content */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative z-20 flex flex-col justify-center h-full px-6 sm:px-12 text-white max-w-3xl"
+        >
+          <motion.h1
+            className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-green-500 drop-shadow-lg"
+            key={title}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            {title}
+          </motion.h1>
+          <p className="text-lg sm:text-xl md:text-2xl font-light drop-shadow-md mb-6">
+            {description}
+          </p>
+          <div className="flex gap-4">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              onClick={() => router.push(route)}
+              className="px-6 py-3 bg-green-600 hover:bg-green-700 rounded-lg font-semibold shadow-lg"
+            >
+              Explore
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              onClick={() => router.push("/contacts")}
+              className="px-6 py-3 bg-transparent border border-white hover:bg-white/20 rounded-lg font-semibold shadow-lg"
+            >
+              Contact Us
+            </motion.button>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Sections */}
+      <AboutUs />
+      <MizanTeam />
+    </>
+  );
+}
