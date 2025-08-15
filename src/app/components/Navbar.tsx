@@ -29,9 +29,9 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/">
           <Image
-            src="/logomizan.png"
+            src="/newlogo.png"
             alt="Mizan Investment Logo"
-            width={140}
+            width={80}
             height={40}
             className="cursor-pointer"
           />

@@ -29,7 +29,7 @@ export default function Footer() {
         {/* Logo & About */}
         <div className="space-y-4">
           <Image
-            src="/logo.png"
+            src="/logomizan.jpeg"
             alt="Mizan Logo"
             width={100}
             height={100}
@@ -75,7 +75,7 @@ export default function Footer() {
               <Mail size={16} /> mizaninvestments@gmail.com
             </p>
             <p className="flex items-center gap-2 hover:text-green-400 transition">
-              <Phone size={16} /> +1 773 746 3519
+              <Phone size={16} /> +1 312 285 7262
             </p>
           </div>
           <div className="mt-4 flex gap-4">
