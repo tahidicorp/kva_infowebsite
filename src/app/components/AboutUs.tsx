@@ -99,8 +99,8 @@ export default function AboutUs() {
           {/* Testimonial 2 */}
           <div className="bg-white rounded-xl shadow-sm p-5 sm:p-6 md:p-8 transition-all">
             <p className="italic text-sm sm:text-base text-gray-700 mb-4 leading-relaxed">
-              &quot;Mizan's financing options helped me expand my small business without the usual stress of loan approvals.
-        Their team guided me at every step, making the process quick and transparent.&quot;
+              &quot;Mizan&apos;s financing options helped me expand my small business without the usual stress of loan approvals.
+              Their team guided me at every step, making the process quick and transparent.&quot;
             </p>
             <div>
               <p className="text-green-700 font-bold">James W.</p>
