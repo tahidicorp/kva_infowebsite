@@ -29,10 +29,33 @@ const gallery = [
   "/lifewave6.jpg",
 ];
 
+// NEW: FAQs
+const faqs = [
+  {
+    q: "What are LifeWave patches?",
+    a: "They’re topical phototherapy patches designed to reflect specific wavelengths of your body’s own infrared energy back into the skin—supporting wellness without drugs or stimulants.",
+  },
+  {
+    q: "How long do I wear a patch?",
+    a: "Most protocols suggest up to 12 hours on, then remove. Always follow product instructions and listen to your body.",
+  },
+  {
+    q: "Will I feel something immediately?",
+    a: "Some users report quick changes (energy, focus, or sleep). Others notice gradual benefits over consistent daily use.",
+  },
+  {
+    q: "Where do I place the patches?",
+    a: "Placement can vary by patch type. We’ll share recommended points and simple diagrams—reach out if you want guidance.",
+  },
+  {
+    q: "Is there a guarantee?",
+    a: "Yes—LifeWave offers a money-back guarantee within the stated period. See official terms when purchasing.",
+  },
+];
+
 export default function LifeWavePage() {
   const [showPromo, setShowPromo] = useState(false);
 
-  // Timed popup after 6 seconds
   useEffect(() => {
     const t = setTimeout(() => setShowPromo(true), 6000);
     return () => clearTimeout(t);
@@ -42,13 +65,7 @@ export default function LifeWavePage() {
     <div className="bg-white text-gray-900">
       {/* Hero */}
       <section className="relative h-[60vh] w-full overflow-hidden">
-        <Image
-          src="/lifewave1.jpg"
-          alt="LifeWave X39 wellness"
-          fill
-          priority
-          className="object-cover"
-        />
+        <Image src="/lifewave1.jpg" alt="LifeWave X39 wellness" fill priority className="object-cover" />
         <div className="absolute inset-0 bg-black/55" />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -109,29 +126,20 @@ export default function LifeWavePage() {
       {/* Science */}
       <section className="bg-gray-50 py-16 px-6 md:px-16 lg:px-24">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <h2 className="text-3xl font-bold text-green-700 mb-4">How Phototherapy Works</h2>
             <p className="text-gray-700 leading-relaxed">
-              LifeWave patches reflect specific wavelengths of your body’s own infrared
-              energy back into the skin. This gentle light interaction is designed to
-              support biochemical processes associated with vitality, recovery, and
-              overall wellness—without drugs or stimulants.
+              LifeWave patches reflect specific wavelengths of your body’s own infrared energy back into the skin.
+              This gentle light interaction is designed to support biochemical processes associated with vitality,
+              recovery, and overall wellness—without drugs or stimulants.
             </p>
             <p className="text-gray-700 leading-relaxed mt-4">
-              Many users incorporate patches like X39® into daily routines to support
-              performance, sleep quality, and an active lifestyle.
+              Many users incorporate patches like X39® into daily routines to support performance, sleep quality,
+              and an active lifestyle.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link
-                href="/contacts"
-                className="inline-block bg-white border border-green-600 text-green-700 px-5 py-2.5 rounded-lg font-medium hover:bg-green-50 transition"
-              >
+              <Link href="/contacts" className="inline-block bg-white border border-green-600 text-green-700 px-5 py-2.5 rounded-lg font-medium hover:bg-green-50 transition">
                 Ask a Question
               </Link>
               <a
@@ -145,28 +153,15 @@ export default function LifeWavePage() {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-lg"
-          >
-            <Image
-              src="/lifewave2.jpg"
-              alt="How phototherapy works"
-              fill
-              className="object-cover"
-            />
+          <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-lg">
+            <Image src="/lifewave2.jpg" alt="How phototherapy works" fill className="object-cover" />
           </motion.div>
         </div>
       </section>
 
       {/* How It Works (Steps) */}
       <section className="px-6 md:px-16 lg:px-24 py-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-green-700">
-          Begin Living Younger Today
-        </h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-green-700">Begin Living Younger Today</h2>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {steps.map((s, i) => (
             <motion.div
@@ -187,9 +182,7 @@ export default function LifeWavePage() {
 
       {/* Gallery */}
       <section className="bg-gray-50 py-16 px-6 md:px-16 lg:px-24">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-green-700">
-          LifeWave in Action
-        </h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-green-700">LifeWave in Action</h2>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {gallery.map((src, i) => (
             <motion.div
@@ -206,15 +199,36 @@ export default function LifeWavePage() {
         </div>
       </section>
 
+      {/* FAQs */}
+      <section className="bg-white py-16 px-6 md:px-16 lg:px-24">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-green-700">FAQs</h2>
+        <div className="mt-10 max-w-4xl mx-auto divide-y rounded-2xl bg-white shadow">
+          {faqs.map((f, i) => (
+            <motion.details
+              key={f.q}
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: i * 0.04 }}
+              className="group p-6"
+            >
+              <summary className="cursor-pointer list-none font-semibold text-gray-900 flex items-center justify-between">
+                <span>{f.q}</span>
+                <span className="text-green-700 group-open:rotate-45 transition-transform">＋</span>
+              </summary>
+              <p className="mt-3 text-gray-700">{f.a}</p>
+            </motion.details>
+          ))}
+        </div>
+      </section>
+
       {/* Guarantee */}
       <section className="px-6 md:px-16 lg:px-24 py-16">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-green-700 mb-3">
-            Money-Back Guarantee
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-green-700 mb-3">Money-Back Guarantee</h2>
           <p className="text-gray-700">
-            Try LifeWave with confidence. If you’re not satisfied within the
-            stated guarantee period, you can request a full refund from LifeWave.
+            Try LifeWave with confidence. If you’re not satisfied within the stated guarantee period,
+            you can request a full refund from LifeWave.
           </p>
           <motion.a
             href="https://lifewave.com/mizaninvestments"
@@ -230,12 +244,8 @@ export default function LifeWavePage() {
 
       {/* CTA Banner */}
       <section className="bg-gradient-to-r from-green-600 to-green-700 text-white py-14 text-center">
-        <h3 className="text-2xl md:text-3xl font-bold">
-          Ready to experience elevated wellness?
-        </h3>
-        <p className="mt-2 text-white/90">
-          Explore LifeWave’s breakthrough phototherapy technology today.
-        </p>
+        <h3 className="text-2xl md:text-3xl font-bold">Ready to experience elevated wellness?</h3>
+        <p className="mt-2 text-white/90">Explore LifeWave’s breakthrough phototherapy technology today.</p>
         <motion.a
           href="https://lifewave.com/mizaninvestments"
           target="_blank"
@@ -250,40 +260,18 @@ export default function LifeWavePage() {
       {/* Timed Promo Popup */}
       <AnimatePresence>
         {showPromo && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-black/50 flex items-center justify-center p-4"
-          >
-            <motion.div
-              initial={{ y: 24, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 24, opacity: 0 }}
-              transition={{ type: "spring", stiffness: 200, damping: 20 }}
-              className="w-full max-w-md bg-white rounded-2xl overflow-hidden shadow-2xl"
-            >
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[60] bg-black/50 flex items-center justify-center p-4">
+            <motion.div initial={{ y: 24, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 24, opacity: 0 }} transition={{ type: "spring", stiffness: 200, damping: 20 }} className="w-full max-w-md bg-white rounded-2xl overflow-hidden shadow-2xl">
               <div className="relative h-40">
                 <Image src="/lifewave3.jpg" alt="LifeWave promo" fill className="object-cover" />
-                <button
-                  onClick={() => setShowPromo(false)}
-                  className="absolute top-3 right-3 bg-black/50 text-white rounded-full w-8 h-8 grid place-items-center"
-                  aria-label="Close promo"
-                >
+                <button onClick={() => setShowPromo(false)} className="absolute top-3 right-3 bg-black/50 text-white rounded-full w-8 h-8 grid place-items-center" aria-label="Close promo">
                   ×
                 </button>
               </div>
               <div className="p-6 text-center">
                 <h4 className="text-xl font-bold text-green-700">Limited-Time Spotlight</h4>
-                <p className="text-gray-700 mt-2">
-                  Explore LifeWave’s most popular wellness patches and start your journey.
-                </p>
-                <a
-                  href="https://lifewave.com/mizaninvestments"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-2.5 rounded-lg font-semibold shadow"
-                >
+                <p className="text-gray-700 mt-2">Explore LifeWave’s most popular wellness patches and start your journey.</p>
+                <a href="https://lifewave.com/mizaninvestments" target="_blank" rel="noopener noreferrer" className="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-2.5 rounded-lg font-semibold shadow">
                   Shop LifeWave
                 </a>
               </div>

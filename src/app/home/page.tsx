@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import AboutUs from "@/app/components/AboutUs";
 import MizanTeam from "@/app/components/mizanTeam";
+import PromoModal from "@/app/components/PromoModal";
 
 const screens = [
   {
@@ -33,14 +34,14 @@ const screens = [
     description:
       "Join the clean energy movement. Discover innovative energy solutions designed for a sustainable future.",
     image: "/thinkenergy1.jpg",
-    route: "/thinkenergy",
+    route: "/thinkenergy/think-energy",
   },
   {
     title: "Health & Stem Cell Tech (LifeWave)",
     description:
       "Explore breakthrough health and stem cell technology with LifeWave — improving wellness and vitality.",
     image: "/lifewave1.jpg",
-    route: "/lifewave",
+    route: "/life-wave",
   },
 ];
 
@@ -48,6 +49,11 @@ export default function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const router = useRouter();
 
+  // Promo state
+  const [showLifeWave, setShowLifeWave] = useState(false);
+  const [showThinkEnergy, setShowThinkEnergy] = useState(false);
+
+  // Hero carousel
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % screens.length);
@@ -55,13 +61,36 @@ export default function HomePage() {
     return () => clearInterval(interval);
   }, []);
 
+  // Trigger LifeWave popup after 6s
+  useEffect(() => {
+    const seen = sessionStorage.getItem("homepage-promos-seen");
+    if (!seen) {
+      const t = setTimeout(() => setShowLifeWave(true), 6000);
+      return () => clearTimeout(t);
+    }
+  }, []);
+
+  // Show ThinkEnergy after LifeWave closes
+  useEffect(() => {
+    if (!showLifeWave && !sessionStorage.getItem("homepage-promos-seen") && !showThinkEnergy) {
+      const t = setTimeout(() => setShowThinkEnergy(true), 1500);
+      return () => clearTimeout(t);
+    }
+  }, [showLifeWave, showThinkEnergy]);
+
+  // Mark as seen
+  useEffect(() => {
+    if (showLifeWave || showThinkEnergy) {
+      sessionStorage.setItem("homepage-promos-seen", "1");
+    }
+  }, [showLifeWave, showThinkEnergy]);
+
   const { title, description, image, route } = screens[currentIndex];
 
   return (
     <>
       {/* Hero Section */}
       <div className="relative w-full h-[85vh] overflow-hidden">
-        {/* Background */}
         <AnimatePresence>
           <motion.div
             key={image}
@@ -74,10 +103,8 @@ export default function HomePage() {
           />
         </AnimatePresence>
 
-        {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40 z-10" />
 
-        {/* Content */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -120,6 +147,24 @@ export default function HomePage() {
       {/* Sections */}
       <AboutUs />
       <MizanTeam />
+
+      {/* Promo Popups */}
+      <PromoModal
+        open={showLifeWave}
+        onClose={() => setShowLifeWave(false)}
+        title="Elevate, Activate, Regenerate with LifeWave"
+        subtitle="Tap into your body’s natural energy for vitality, recovery, and sleep."
+        imageSrc="/lifewave1.jpg"
+        href="/life-wave"
+      />
+      <PromoModal
+        open={showThinkEnergy}
+        onClose={() => setShowThinkEnergy(false)}
+        title="Think Energy — Smart, Clean, Competitive"
+        subtitle="Explore competitive rates and 100% clean energy options."
+        imageSrc="/thinkenergy/thinkenergy1.jpg"
+        href="/think-energy"
+      />
     </>
   );
 }

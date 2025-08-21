@@ -9,7 +9,7 @@ const bullets = [
   { title: "Competitive Rates, Up to 3 years", text: "Lock in pricing for peace of mind and predictable energy costs." },
   { title: "$100 Cash Gift Card*", text: "Limited-time promo on qualifying plans." },
   { title: "100% Clean Energy", text: "Choose renewable electricity for your home." },
-  { title: "Free to Enroll", text: "No sign‑up fee on eligible plans." },
+  { title: "Free to Enroll", text: "No sign-up fee on eligible plans." },
 ];
 
 const gallery = [
@@ -43,6 +43,30 @@ const videos = [
     title: "Customer Testimonial #2",
     description: "Another firsthand story on savings and enrollment experience.",
     embed: "https://player.vimeo.com/video/1071907642",
+  },
+];
+
+// NEW: FAQs
+const faqs = [
+  {
+    q: "What is Think Energy?",
+    a: "A retail electricity provider offering competitive fixed-rate plans (up to 3 years) with renewable options and simple enrollment.",
+  },
+  {
+    q: "Is there a sign-up fee?",
+    a: "Many plans have no enrollment fee. Always review plan details during checkout for exact terms.",
+  },
+  {
+    q: "Do you offer 100% clean energy?",
+    a: "Yes—eligible plans source renewable electricity via RECs to match your usage.",
+  },
+  {
+    q: "How do I enroll?",
+    a: "Scan the QR code on this page or click the “View Plans & Benefits” button to enroll online in a few minutes.",
+  },
+  {
+    q: "Do promotions change?",
+    a: "Promotions (like a $100 cash gift card) can change and have eligibility requirements. See the latest details at the link above.",
   },
 ];
 
@@ -139,9 +163,10 @@ export default function ThinkEnergyPage() {
           >
             <h2 className="text-3xl font-bold text-emerald-700 mb-4">Scan to Join</h2>
             <p className="text-gray-700 leading-relaxed">
-              Use your phone's camera to scan and visit our enrollment page. Prefer a link?
-              Click below to see plans and current offers.
-            </p>
+  Use your phone&apos;s camera to scan and visit our enrollment page. Prefer a link?
+  Click below to see plans and current offers.
+</p>
+
             <div className="mt-6 flex flex-wrap gap-3">
               <a
                 href="https://get.thinkenergy.com/thinkbenefits"
@@ -220,10 +245,35 @@ export default function ThinkEnergyPage() {
         </div>
       </section>
 
+      {/* FAQs */}
+      <section className="bg-white py-16 px-6 md:px-16 lg:px-24">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-emerald-700">FAQs</h2>
+        <div className="mt-10 max-w-4xl mx-auto divide-y rounded-2xl bg-white shadow">
+          {faqs.map((f, i) => (
+            <motion.details
+              key={f.q}
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: i * 0.04 }}
+              className="group p-6"
+            >
+              <summary className="cursor-pointer list-none font-semibold text-gray-900 flex items-center justify-between">
+                <span>{f.q}</span>
+                <span className="text-emerald-700 group-open:rotate-45 transition-transform">＋</span>
+              </summary>
+              <p className="mt-3 text-gray-700">{f.a}</p>
+            </motion.details>
+          ))}
+        </div>
+      </section>
+
       {/* Videos & Testimonials */}
       <section className="px-6 md:px-16 lg:px-24 py-16">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-emerald-700">Customer Stories & Demos</h2>
-        <p className="text-center text-gray-600 mt-2 max-w-2xl mx-auto">Watch brief clips from Think Energy customers and quick explainers. Short, clear, and easy to browse.</p>
+        <p className="text-center text-gray-600 mt-2 max-w-2xl mx-auto">
+          Watch brief clips from Think Energy customers and quick explainers. Short, clear, and easy to browse.
+        </p>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {videos.map((v, i) => (
             <motion.article
