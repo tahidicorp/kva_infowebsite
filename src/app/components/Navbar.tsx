@@ -20,6 +20,8 @@ export default function Navbar() {
     { name: 'Real Estate', href: '/real-estate' },
     { name: 'Construction', href: '/construction' },
     { name: 'Financing', href: '/financing' },
+    {name: 'LifeWave', href: '/life-wave'},
+    { name: 'Think Energy', href: '/think-energy' }
 
   ];
 

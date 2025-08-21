@@ -28,6 +28,20 @@ const screens = [
     image: "/real_estate.jpg",
     route: "/real-estate",
   },
+  {
+    title: "Clean Energy (ThinkEnergy)",
+    description:
+      "Join the clean energy movement. Discover innovative energy solutions designed for a sustainable future.",
+    image: "/thinkenergy1.jpg",
+    route: "/thinkenergy",
+  },
+  {
+    title: "Health & Stem Cell Tech (LifeWave)",
+    description:
+      "Explore breakthrough health and stem cell technology with LifeWave — improving wellness and vitality.",
+    image: "/lifewave1.jpg",
+    route: "/lifewave",
+  },
 ];
 
 export default function HomePage() {
@@ -37,7 +51,7 @@ export default function HomePage() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % screens.length);
-    }, 5000);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 

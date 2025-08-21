@@ -52,6 +52,8 @@ export default function Footer() {
               { name: "Construction", href: "/construction" },
               { name: "Real Estate", href: "/real-estate" },
               { name: "KVA Ride", href: "/kva-ride" },
+              { name: "LifeWave", href: "/life-wave" },
+              { name: "Think Energy", href: "/think-energy" },
             ].map((item) => (
               <li key={item.name}>
                 <Link

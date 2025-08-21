@@ -19,13 +19,13 @@ export default function MizanTeam() {
       <div 
         className="max-w-lg mx-auto bg-white shadow-lg rounded-2xl p-8 text-center transform transition duration-300 hover:scale-105 hover:shadow-2xl animate-fadeInUp"
       >
-        <div className="w-32 h-32 mx-auto relative">
+        <div className="w-30 h-32 mx-auto relative">
           <Image
-            src="/logomizan.png" // Ensure logo is square for perfect circle crop
+            src="/logomizan.jpeg"
             alt="CEO - Luqman Cooper"
-            width={128}
-            height={128}
-            className="rounded-full object-cover border-4 border-green-700"
+            width={100}
+            height={100}
+            className="rounded-full object-cover border-2 border-green-700"
           />
         </div>
         <h3 className="text-2xl font-semibold text-green-700 mt-6">Luqman Cooper</h3>

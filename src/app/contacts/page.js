@@ -7,9 +7,12 @@ export default function ContactPage() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleSend = async (e: React.FormEvent) => {
+  const handleSend = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setStatus("");
 
     const templateParams = {
       user_email: email,
@@ -17,26 +20,30 @@ export default function ContactPage() {
     };
 
     try {
-      const result = await emailjs.send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
         templateParams,
-        "YOUR_PUBLIC_KEY"
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       );
-      console.log(result.text);
+
       setStatus("✅ Message sent successfully!");
       setEmail("");
       setMessage("");
     } catch (error) {
-      console.error(error);
-      setStatus("❌ Failed to send message.");
+      console.error("EmailJS Error:", error);
+      setStatus("❌ Failed to send message. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <div className="min-h-screen bg-white mt-10 py-16 px-6 text-gray-800">
       <div className="max-w-xl mx-auto">
-        <h1 className="text-4xl font-bold text-green-700 mb-6 text-center">Contact Us</h1>
+        <h1 className="text-4xl font-bold text-green-700 mb-6 text-center">
+          Contact Us
+        </h1>
         <p className="text-center text-gray-600 mb-10">
           Have a question or message? We&apos;d love to hear from you.
         </p>
@@ -67,12 +74,21 @@ export default function ContactPage() {
 
           <button
             type="submit"
-            className="w-full bg-green-700 text-white py-3 rounded hover:bg-green-800 transition"
+            disabled={loading}
+            className="w-full bg-green-700 text-white py-3 rounded hover:bg-green-800 transition disabled:opacity-50"
           >
-            Send
+            {loading ? "Sending..." : "Send"}
           </button>
 
-          {status && <p className="text-center text-sm text-gray-700 mt-2">{status}</p>}
+          {status && (
+            <p className="text-center text-sm mt-2">
+              {status.includes("✅") ? (
+                <span className="text-green-700">{status}</span>
+              ) : (
+                <span className="text-red-600">{status}</span>
+              )}
+            </p>
+          )}
         </form>
       </div>
     </div>
