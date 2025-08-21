@@ -33,8 +33,8 @@ const screens = [
     title: "Clean Energy (ThinkEnergy)",
     description:
       "Join the clean energy movement. Discover innovative energy solutions designed for a sustainable future.",
-    image: "/thinkenergy1.jpg",
-    route: "/thinkenergy/think-energy",
+    image: "/thinkenergy/thinkenergy1.jpg",
+    route: "think-energy",
   },
   {
     title: "Health & Stem Cell Tech (LifeWave)",
