@@ -163,7 +163,7 @@ export default function ThinkEnergyPage() {
           >
             <h2 className="text-3xl font-bold text-emerald-700 mb-4">Scan to Join</h2>
             <p className="text-gray-700 leading-relaxed">
-  Use your phone&apos;s camera to scan and visit our enrollment page. Prefer a link?
+  Use your camera to scan and visit our enrollment page. Prefer a link?
   Click below to see plans and current offers.
 </p>
 

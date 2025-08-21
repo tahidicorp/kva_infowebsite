@@ -245,7 +245,7 @@ export default function CryptoPage() {
           >
             <h2 className="text-3xl font-bold text-emerald-700 mb-2">Referral Bonus — Up to $100</h2>
             <p className="text-gray-700">
-              Use our Crypto.com referral and we both get up to <b>$100 USD</b> in rewards. It’s a simple way to
+              Use our Crypto.com referral and we both get up to <b>$100 USD</b> in rewards. It&apos;s a simple way to
               onboard safely before classes start.
             </p>
             <div className="mt-4 rounded-xl bg-gray-50 p-4 border">

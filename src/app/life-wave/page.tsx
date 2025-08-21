@@ -10,7 +10,7 @@ const benefits = [
   { icon: "🏃", title: "Activity", text: "Enhance physical performance and recover faster from exercise." },
   { icon: "🌙", title: "Sleep", text: "Improve your sleep quality and duration for deeper rest." },
   { icon: "🦵", title: "Movement", text: "Unlock better mobility and elevate overall fitness." },
-  { icon: "❤️", title: "Wellness", text: "Leverage your body's inherent energy for holistic well-being." },
+  { icon: "❤️", title: "Wellness", text: "Leverage your body&apos;s inherent energy for holistic well-being." },
   { icon: "💆‍♀️", title: "Skin Care", text: "Science + nature to bring out the best in your skin." },
 ];
 
