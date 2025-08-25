@@ -64,7 +64,7 @@ export default function LifeWavePage() {
   return (
     <div className="bg-white text-gray-900">
       {/* Hero */}
-      <section className="relative h-[60vh] w-full overflow-hidden">
+      <section className="relative h-[75vh] md:h-[60vh] w-full overflow-hidden">
         <Image src="/lifewave1.jpg" alt="LifeWave X39 wellness" fill priority className="object-cover" />
         <div className="absolute inset-0 bg-black/55" />
         <motion.div

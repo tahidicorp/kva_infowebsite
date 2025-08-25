@@ -79,7 +79,7 @@ export default function ThinkEnergyPage() {
   }, []);
 
   return (
-    <div className="bg-white text-gray-900">
+    <div className="bg-white text-gray-900 mt-5px">
       {/* Hero */}
       <section className="relative w-full overflow-hidden bg-[#0e1230]">
         <div className="relative h-[58vh] w-full">
@@ -96,9 +96,11 @@ export default function ThinkEnergyPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
+          className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 mt-10 sm:mt-16 md:mt-24"
         >
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+
+
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight ">
             Think Energy — Smart, Clean, Competitive
           </h1>
           <p className="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl">
@@ -119,7 +121,7 @@ export default function ThinkEnergyPage() {
       </section>
 
       {/* Benefits */}
-      <section className="px-6 md:px-16 lg:px-24 py-16">
+      <section className=" px-6 md:px-16 lg:px-24 py-16">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -163,9 +165,9 @@ export default function ThinkEnergyPage() {
           >
             <h2 className="text-3xl font-bold text-emerald-700 mb-4">Scan to Join</h2>
             <p className="text-gray-700 leading-relaxed">
-  Use your camera to scan and visit our enrollment page. Prefer a link?
-  Click below to see plans and current offers.
-</p>
+              Use your camera to scan and visit our enrollment page. Prefer a link?
+              Click below to see plans and current offers.
+            </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
               <a
