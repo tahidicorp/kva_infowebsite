@@ -28,7 +28,7 @@ export default function MizanTeam() {
             className="rounded-full object-cover border-2 border-green-700"
           />
         </div>
-        <h3 className="text-2xl font-semibold text-green-700 mt-6">Luqman Cooper</h3>
+        <h3 className="text-2xl font-semibold text-green-700 mt-6">Luqman Zachary</h3>
         <p className="text-sm text-gray-500 mb-3">Chief Executive Officer</p>
         <p className="text-gray-600 mb-4">
           With a passion for innovation and community growth, Luqman has led Mizan Investments in delivering solutions that transform lives and build stronger futures.
